@@ -14,64 +14,6 @@
     <link rel="shortcut icon" href="assets/images/chart.png" type="image/x-icon">
 
     <title>Portfólio | Marcos Vinicius</title>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const projectImages = document.querySelectorAll(".project-image");
-    
-            // Carregamento assíncrono de imagens
-            projectImages.forEach(image => {
-                const src = image.getAttribute("data-src");
-                const img = new Image();
-                img.src = src;
-                img.onload = function () {
-                    image.style.backgroundImage = `url('${src}')`;
-                };
-            });
-    
-            // Lógica de filtragem dinâmica
-            const filterBtns = document.querySelectorAll(".filter-btn");
-    
-            filterBtns.forEach(btn => {
-                btn.addEventListener("click", function () {
-                    const filter = this.getAttribute("data-filter");
-                    filterBtns.forEach(btn => {
-                        btn.classList.remove("active-filter");
-                    });
-                    this.classList.add("active-filter");
-    
-                    projectImages.forEach(image => {
-                        const projectBox = image.parentElement.parentElement;
-                        if (filter === "all") {
-                            projectBox.style.display = "block";
-                        } else {
-                            if (projectBox.classList.contains(filter)) {
-                                projectBox.style.display = "block";
-                            } else {
-                                projectBox.style.display = "none";
-                            }
-                        }
-                    });
-                });
-            });
-        });
-        const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectBoxes = document.querySelectorAll('.project-box');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.dataset.filter;
-
-            projectBoxes.forEach(box => {
-                box.style.display = 'none';
-                if (box.classList.contains(filter)) {
-                    box.style.display = 'block';
-                }
-            });
-        });
-    });
-    </script>
-    
 </head>
 <body>
    <div class="container">
@@ -102,12 +44,9 @@
             </ul>
         </div>
         <div class="nav-button">
-            <button class="btn download-btn" onclick="window.open('https://drive.google.com/file/d/1Y8IuVBHJ-RdSBqLyH0bvr9AGGfJ41bqw/view?usp=drive_link', '_blank')">
-                <span>Baixar Currículo</span> 
-                <i class="uil uil-file-alt"></i>
-            </button>
+            <button class="btn" onclick="window.location.href='caminho/para/seu/curriculo.pdf'">Baixar Currículo <i class="uil uil-file-alt"></i></button>
+
         </div>
-        
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
@@ -123,7 +62,8 @@
                 <span>Marcos Vinicius</span>
             </div>
             <div class="featured-name">
-                <p>Eu sou </br> <span class="typedText"></span></p> 
+                <h1>Oi, eu sou um </br></h1> 
+                <p><span class="typedText"></span></p>
             </div>
             <div class="featured-text-info">
                 <p>Coletar, processar, analisar e apresentar dados para apoiar decisões operacionais diárias e impulsionar transformações globais.
@@ -131,13 +71,24 @@
             </div>
             <div class="featured-text-btn">
                 <button class="btn blue-btn">Contrate-me</button>
-                <div class="nav-button">
-                    <button class="btn download-btn" onclick="window.open('https://drive.google.com/file/d/1Y8IuVBHJ-RdSBqLyH0bvr9AGGfJ41bqw/view?usp=drive_link', '_blank')">
-                        <span>Baixar Currículo</span> 
-                        <i class="uil uil-file-alt"></i>
-                    </button>
-                </div>            
-            </div>                                                   
+                <button class="btn" onclick="window.location.href='caminho/para/seu/curriculo.pdf'">Baixar Currículo <i class="uil uil-file-alt"></i></button>
+            </div>
+            <div class="social_icons">
+                <div class="icon" onclick="window.open('https://www.linkedin.com/in/marcosvmanjos/', '_blank');">
+                    <i class="uil uil-linkedin-alt" style="font-size: 1.4em;"></i>
+                </div>
+                <div class="icon" onclick="window.open('https://github.com/marcos-anjos', '_blank');">
+                    <i class="uil uil-github-alt" style="font-size: 1.4em;"></i>
+                </div>                
+                <div class="icon" onclick="window.open('https://www.instagram.com/', '_blank');">
+                    <i class="uil uil-instagram" style="font-size: 1.4em;"></i>
+                </div>
+                <div class="icon" onclick="window.open('https://twitter.com/', '_blank');">
+                    <i class="uil uil-twitter-alt" style="font-size: 1.4em;"></i>
+                </div>
+                               
+            </div>         
+                                             
           </div>
           <div class="featured-image">
             <div class="image">
@@ -161,23 +112,21 @@
             <div class="col">
                 <div class="about-info">
                     <h3>Minha Introdução</h3>
-                    <p>Olá! Sou Marcos Vinicius, um entusiasta da análise de dados apaixonado pelo potencial 
-                        transformador das informações. Minha jornada na análise de dados começou com a busca por 
-                        insights valiosos em conjuntos de dados diversos. Ao longo dos anos, desenvolvi uma habilidade sólida na 
-                        identificação e coleta de dados relevantes de várias fontes, incluindo bancos de dados, 
-                        APIs e outras fontes externas. Com experiência prática em ferramentas como Python, R e SQL, 
-                        sou capaz de limpar, transformar e manipular dados de forma eficiente, preparando-os para 
-                        análises detalhadas. Além disso, possuo expertise em criar visualizações 
-                         claras e impactantes através de ferramentas como Matplotlib, Seaborn e Ferramentas de BI, 
-                         facilitando a comunicação eficaz de insights. Estou constantemente buscando aprimorar 
-                         minhas habilidades e explorar novas tecnologias para continuar entregando valor por meio 
-                         da análise de dados. Estou animado para colaborar em projetos desafiadores e fazer parte 
-                         de equipes inovadoras que buscam soluções orientadas por dados.</p>
+                    <p>Olá! Sou Marcos Vinicius, um entusiasta da análise de dados apaixonado pelo potencial transformador das 
+                        informações. Minha jornada na análise de dados começou com a busca por insights valiosos em conjuntos de 
+                        dados diversos. Ao longo dos anos, desenvolvi uma habilidade sólida na identificação e coleta de dados 
+                        relevantes de várias fontes, incluindo bancos de dados, APIs e outras fontes externas. Com experiência 
+                        prática em ferramentas como Python, R e SQL, sou capaz de limpar, transformar e manipular dados de forma 
+                        eficiente, preparando-os para análises detalhadas. Além disso, possuo expertise em criar visualizações 
+                        claras e impactantes através de ferramentas como Matplotlib, Seaborn e Ferramentas de BI, facilitando a 
+                        comunicação eficaz de insights. Estou constantemente buscando aprimorar minhas habilidades e explorar 
+                        novas tecnologias para continuar entregando valor por meio da análise de dados. Estou animado para 
+                        colaborar em projetos desafiadores e fazer parte de equipes inovadoras que buscam soluções orientadas 
+                        por dados.
+                    </p>
                     <div class="about-btn">
-                        <button class="btn download-btn" onclick="window.open('https://drive.google.com/file/d/1Y8IuVBHJ-RdSBqLyH0bvr9AGGfJ41bqw/view?usp=drive_link', '_blank')">
-                            <span>Baixar Currículo</span> 
-                            <i class="uil uil-file-alt"></i>
-                        </button>                    </div>
+                        <button class="btn" onclick="window.location.href='caminho/para/seu/curriculo.pdf'">Baixar Currículo <i class="uil uil-file-alt"></i></button>
+                    </div>
                 </div>
             </div>
             
@@ -207,7 +156,10 @@
                         <span>Tableau</span>
                         <span>Looker Studio</span>
                         <span>Visual Studio Code</span>
-                        <span>Jupyter Notebooks</span>                        
+                        <span>Anaconda</span> 
+                        <span>Jupyter Notebooks</span>
+                        <span>RStudio</span>
+                        <span>Google Colab</span>                        
                     </div>
                 </div>
                 <div class="skills-box">
@@ -216,194 +168,134 @@
                     </div>
                     <div class="skills-list">
                         <span>MongoDB</span>
-                        <span>PostgreSQL</span>
+                        <span>NoSQL</span>
                         <span>MySQL</span>
                     </div>
                 </div>
-            </div> 
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Communication</span>
+                        <span>Problem-Solving</span>
+                        <span>Teamwork</span>
+                        <span>Leadership</span>
+                        <span>Time Management</span>
+                        <span>Critical Thinking</span>
+                        <span>Adaptability</span>
+                    </div>              
+                </div>
+            </div>
           </div>
-       </section> 
+       </section>
 
-    <!-- -------------- PROJECT BOX ---------------- -->
-<style>
-    .project-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; /* Alterado para 'flex-start' */
-        gap: 20px; /* Espaçamento entre os projetos */
-    }
+       <!-- -------------- PROJECT BOX ---------------- -->
 
-    .project-box {
-        flex-basis: calc(33.33% - 20px);
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .project-box:hover {
-        transform: translateY(-5px);
-    }
-    
-    .project-filter {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 60px; /* Espaço abaixo dos botões */
-        margin-top: -30px; /* Margem superior */
-    }
-    
       
-    .filter-btn {
-        font-size: 16px;
-        color: var(--first-color); /* Cor do texto dos botões */
-        background: transparent; /* Fundo transparente */
-        border: 1px solid var(--first-color); /* Borda com a cor first-color */
-        padding: 5px 15px;
-        border-radius: 5px;
-        margin: 0 5px; /* Espaçamento entre os botões */
-        cursor: pointer;
-        transition-duration: 0s; /* Duração da animação de transição */
-    }
-
-    .filter-btn:hover {
-        background-color: var(--first-color); /* Cor de fundo dos botões ao passar o mouse */
-        color: var(--color-white); /* Altera a cor do texto ao passar o mouse */
-    }
-
-    .active-filter {
-        background-color: var(--first-color); /* Cor de fundo do botão selecionado */
-        color: var(--color-white); /* Cor do texto do botão selecionado */
-    }
     
-    /* Adicione outros estilos conforme necessário */
-</style>
-
     <section class="section" id="projects">
         <div class="top-header">
             <h1>Projetos do Portfólio</h1>
             <span>Uma amostra dos meus principais projetos de análise de dados.</span> </br>
-            <span>Os projetos estão disponíveis como artigos no Medium e código aberto no GitHub.</span>
+            <span>A maioria desses notebooks está disponível como código aberto no GitHub, sob a licença MIT.</span>
         </div>
-    
-        <!-- Botões de filtro -->
-        <div class="project-filter">
-            <button class="filter-btn active-filter" data-filter="all">
-                <i class="uil uil-globe"></i> Todos
-            </button>
-            <button class="filter-btn" data-filter="python">
-                <i class="uil-arrow"></i> Python
-            </button>
-            <button class="filter-btn" data-filter="sql">
-                <i class="uil uil-database"></i> SQL
-            </button>
-            <button class="filter-btn" data-filter="ws">
-                <i class="uil uil-data-sharing"></i> Web Scraping
-            </button>
-            <button class="filter-btn" data-filter="api">
-                <i class="uil-folder-network"></i> API
-            </button>
-            <button class="filter-btn" data-filter="visualization">
-                <i class="uil uil-chart-bar"></i> Ferramentas de BI
-            </button>
-        </div>
-        
-    
-    <!-- Container de projetos -->
-    <div class="project-container">
         <!-- Projetos 1 -->
-        <div class="project-box python"> 
-            <a href="https://github.com/marcos-anjos/EAD-McDonalds-Nutrition-Facts" target="_blank">
+        <div class="project-container">
+       <div class="project-box">
+        <a href="https://github.com/marcos-anjos/EAD-McDonalds-Nutrition-Facts">
+            <div class="project-image">
+                <img src="assets\images\mcdonald.jpg" alt="">
+                <div class="project-overlay">
+                    <h4>Exploração Nutricional do Menu do McDonald's</h4>
+                    <label>O projeto consiste em uma análise exploratória dos dados 
+                        nutricionais do menu do McDonald's, utilizando técnicas de limpeza,
+                        visualização e análise de dados em Python.</label>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- Projetos 2 -->
+        <div class="project-box">
+            <a href="https://github.com/marcos-anjos/SQL-Data-Exploration">
                 <div class="project-image">
-                    <img src="assets\images\mcdonald.jpg" alt="" loading="lazy" data-src="assets\images\mcdonald.jpg">
+                    <img src="assets\images\covid-pic.jpg" alt="">
                     <div class="project-overlay">
-                        <h4>Exploração Nutricional do Menu do McDonald's</h4>
-                        <label>O projeto consiste em uma análise exploratória dos dados 
-                            nutricionais do menu do McDonald's, utilizando técnicas de limpeza,
-                            visualização e análise de dados em Python.</label>
-                        </div>
+                        <h4>Análise Global da Pandemia de Covid-19: Explorando Dados com SQL</h4>
+                        <label> Este projeto utiliza técnicas avançadas de SQL para explorar dados 
+                            detalhados da pandemia de Covid-19 em escala global. Investigamos casos 
+                            confirmados, mortalidade, vacinações e outras métricas relevantes em diferentes 
+                            regiões, buscando compreender o impacto da pandemia e identificar padrões 
+                            significativos.</label>
                     </div>
-                </a>
-            </div>
-            <!-- Projetos 2 -->
-            <div class="project-box sql">
-                <a href="https://github.com/marcos-anjos/SQL-Data-Exploration" target="_blank">
-                    <div class="project-image">
-                        <img src="assets\images\covid-pic.jpg" alt="" loading="lazy" data-src="assets\images\covid-pic.jpg">
-                        <div class="project-overlay">
-                            <h4>Análise Global da Pandemia de Covid-19: Explorando Dados com SQL</h4>
-                            <label> Este projeto utiliza técnicas avançadas de SQL para explorar dados 
-                                detalhados da pandemia de Covid-19 em escala global. Investigamos casos 
-                                confirmados, mortalidade, vacinações e outras métricas relevantes em diferentes 
-                                regiões, buscando compreender o impacto da pandemia e identificar padrões 
-                                significativos.</label>
-                        </div>
+                </div>
+            </a>
+        </div>
+        <!-- Projetos 3 -->
+        <div class="project-box">
+            <a href="https://github.com/seu-usuario/projeto6">
+                <div class="project-image">
+                    <img src="assets\images\pic-tableau.jpg" alt="">
+                    <div class="project-overlay">
+                        <h4>COVID-19 Dashboard em Tableau</h4>
+                        <label>Este dashboard interativo oferece uma visão dos dados
+                             da pandemia de Covid-19 em todo o mundo. Ele combina informações cruciais, 
+                             como casos confirmados, número de mortes, taxas de vacinação e outras métricas 
+                             relacionadas à Covid-19, em uma interface dinâmica e acessível.</label>
                     </div>
-                </a>
-            </div>
-            <!-- Projetos 3 -->
-            <div class="project-box ws">
-                <a href="https://github.com/marcos-anjos/IMDB-Website-Scraper" target="_blank">
-                    <div class="project-image">
-                        <img src="assets\images\imdb.jpg" alt="" loading="lazy" data-src="assets\images\pic-tableau.jpg">
-                        <div class="project-overlay">
-                            <h4>IMDB Website Scraper</h4>
-                            <label>O projeto "IMDB Website Scraper" consiste na criação 
-                                de um web scraper para extrair dados do site IMDb, especificamente os 
-                                filmes listados no Top 250.</label>
-                        </div>
+                </div>
+            </a>
+        </div>
+        <!-- Projetos 4 -->
+        <div class="project-box">
+            <a href="https://github.com/marcos-anjos/EAD-McDonalds-Nutrition-Facts">
+                <div class="project-image">
+                    <img src="assets\images\house.jpg" alt="">
+                    <div class="project-overlay">
+                        <h4>Limpeza de Dados em SQL: Preparação de Dados para Análise</h4>
+                        <label> Este projeto tem como objetivo preparar e limpar os dados relacionados ao 
+                            mercado imobiliário de Nashville por meio de consultas SQL.
+                            Ao final do processo, os dados estarão prontos para análise e
+                            exploração mais aprofundadas, contribuindo para uma compreensão precisa do mercado 
+                            imobiliário de Nashville e auxiliando em tomadas de decisão fundamentadas.</label>
                     </div>
-                </a>
-            </div>
-            <!-- Projetos 4 -->
-            <div class="project-box sql">
-                <a href="https://github.com/marcos-anjos/Data-Cleaning-in-SQL" target="_blank">
-                    <div class="project-image">
-                        <img src="assets\images\house.jpg" alt="" loading="lazy" data-src="assets\images\house.jpg">
-                        <div class="project-overlay">
-                            <h4>Limpeza de Dados em SQL: Preparação de Dados para Análise</h4>
-                            <label> Este projeto tem como objetivo preparar e limpar os dados relacionados ao 
-                                mercado imobiliário de Nashville por meio de consultas SQL.
-                                Ao final do processo, os dados estarão prontos para análise e
-                                exploração mais aprofundadas, contribuindo para uma compreensão precisa do mercado 
-                                imobiliário de Nashville e auxiliando em tomadas de decisão fundamentadas.</label>
-                        </div>
+                </div>
+            </a>
+        </div>
+        <!-- Projetos 5 -->
+        <div class="project-box">
+            <a href="https://github.com/seu-usuario/projeto5">
+                <div class="project-image">
+                    <img src="assets\images\bike.jpg" alt="">
+                    <div class="project-overlay">
+                        <h4> Venda de Biciletas Dashboard em Excel</h4>
+                        <label> Este dashboard oferece informações demográficas e de 
+                            comportamento de clientes em um contexto de marketing. Esses dados 
+                            podem ser utilizados para análise de mercado, segmentação de clientes, 
+                            previsão de comportamento de compra e outras análises relevantes para estratégias 
+                            de marketing e tomada de decisão empresarial. </label>
                     </div>
-                </a>
-            </div>
-            <!-- Projetos 5 -->
-            <div class="project-box visualization">
-                <a href="https://github.com/marcos-anjos/Bike-Sales-Dashboard" target="_blank">
-                    <div class="project-image">
-                        <img src="assets\images\bike.jpg" alt="" loading="lazy" data-src="assets\images\bike.jpg">
-                        <div class="project-overlay">
-                            <h4> Venda de Biciletas Dashboard em Excel</h4>
-                            <label> Este dashboard oferece informações demográficas e de 
-                                comportamento de clientes em um contexto de marketing. Esses dados 
-                                podem ser utilizados para análise de mercado, segmentação de clientes, 
-                                previsão de comportamento de compra e outras análises relevantes para estratégias 
-                                de marketing e tomada de decisão empresarial. </label>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Projetos 6 -->
-            <div class="project-box python api">
-                <a href="https://github.com/marcos-anjos/Automate-API-Extraction" target="_blank">
-                    <div class="project-image">
-                        <img src="assets\images\coin.jpg" alt="" loading="lazy" data-src="assets\images\coin.jpg">
-                        <div class="project-overlay">
-                            <h4>Acompanhamento em Tempo Real do Mercado de Criptomoedas</h4>
-                            <label>Este projeto de integração com a API do CoinMarketCap oferece 
-                                uma visualização dinâmica e em tempo real das últimas informações sobre 
-                                criptomoedas. O dashboard interativo exibe dados essenciais, como preços 
-                                atualizados, variações percentuais nas últimas horas, dias e semanas, e outras 
-                                métricas relevantes para análise de mercado.</label>
+                </div>
+            </a>
+        </div>
+        <!-- Projetos 6 -->
+        <div class="project-box">
+            <a href="https://github.com/seu-usuario/projeto6">
+                <div class="project-image">
+                    <img src="assets\images\coin.jpg" alt="">
+                    <div class="project-overlay">
+                        <h4>Acompanhamento em Tempo Real do Mercado de Criptomoedas</h4>
+                        <label>Este projeto de integração com a API do CoinMarketCap oferece 
+                            uma visualização dinâmica e em tempo real das últimas informações sobre 
+                            criptomoedas. O dashboard interativo exibe dados essenciais, como preços 
+                            atualizados, variações percentuais nas últimas horas, dias e semanas, e outras 
+                            métricas relevantes para análise de mercado.</label>
                         </div>
                     </div>
                 </a>
             </div>            
-        </div>
+        </div> 
+        
     </section>
            
        <!-- -------------- CONTACT BOX ---------------- -->
@@ -442,45 +334,45 @@
     </main>
 
     <!-- --------------- FOOTER --------------- -->
-<footer>
-    <div class="top-footer">
-        <p style="font-size: medium;"><em>Dados são o novo petróleo.</em></p>
-    </div>        
-    <div class="middle-footer">
-        <ul class="footer-menu">
-            <li class="footer_menu_list">
-                <a href="#home">Início</a>
-            </li>
-            <li class="footer_menu_list">
-                <a href="#about">Sobre</a>
-            </li>
-            <li class="footer_menu_list">
-                <a href="#projects">Projetos</a>
-            </li>
-            <li class="footer_menu_list">
-                <a href="#contact">Contato</a>
-            </li>
-        </ul>
+    <footer>
+        <div class="top-footer">
+            <p style="font-size: large;"><em>Dados são o novo petróleo.</em></p>
+        </div>        
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">Sobre</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">Projetos</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Contato</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon" onclick="window.open('https://www.linkedin.com/in/marcosvmanjos/', '_blank');">
+                <i class="uil uil-linkedin-alt" style="font-size: 1.5em;"></i>
+            </div>
+            <div class="icon" onclick="window.open('https://github.com/marcos-anjos', '_blank');">
+                <i class="uil uil-github-alt" style="font-size: 1.5em;"></i>
+            </div>                
+            <div class="icon" onclick="window.open('https://www.instagram.com/', '_blank');">
+                <i class="uil uil-instagram" style="font-size: 1.5em;"></i>
+            </div>
+            <div class="icon" onclick="window.open('https://twitter.com/', '_blank');">
+                <i class="uil uil-twitter-alt" style="font-size: 1.5em;"></i>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Marcos Vinicius</a> | 2024</p>
+        </div>        
+    </footer>
     </div>
-    <div class="footer-social-icons">
-        <div class="icon" onclick="window.open('https://www.linkedin.com/in/marcosvmanjos/', '_blank');" aria-label="LinkedIn">
-            <i class="uil uil-linkedin-alt" style="font-size: 1.5em;"></i>
-        </div>
-        <div class="icon" onclick="window.open('https://github.com/marcos-anjos', '_blank');" aria-label="GitHub">
-            <i class="uil uil-github-alt" style="font-size: 1.5em;"></i>
-        </div>                
-        <div class="icon" onclick="window.open('https://www.instagram.com/', '_blank');" aria-label="Instagram">
-            <i class="uil uil-instagram" style="font-size: 1.5em;"></i>
-        </div>
-        <div class="icon" onclick="window.open('https://twitter.com/', '_blank');" aria-label="Twitter">
-            <i class="uil uil-twitter-alt" style="font-size: 1.5em;"></i>
-        </div>
-    </div>
-    <div class="bottom-footer">
-        <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Marcos Vinicius</a> | 2024</p>
-    </div>        
-</footer>
-
 
     <!-- ----- TYPING JS Link ----- -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -490,42 +382,6 @@
 
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
-    <!-- Adicione este código dentro de <script> tags -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projects = document.querySelectorAll('.project-box');
-
-        filterButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                const filterValue = button.getAttribute('data-filter');
-                filterProjects(filterValue);
-            });
-        });
-
-        function filterProjects(theme) {
-            projects.forEach(function(project) {
-                const projectThemes = project.classList;
-                if (theme === 'all' || projectThemes.contains(theme)) {
-                    project.style.display = 'block';
-                } else {
-                    project.style.display = 'none';
-                }
-            });
-            toggleActiveButton(theme);
-        }
-
-        function toggleActiveButton(theme) {
-            filterButtons.forEach(function(button) {
-                if (button.getAttribute('data-filter') === theme) {
-                    button.classList.add('active-filter');
-                } else {
-                    button.classList.remove('active-filter');
-                }
-            });
-        }
-    });
-</script>
-
 </body>
 </html>
+
