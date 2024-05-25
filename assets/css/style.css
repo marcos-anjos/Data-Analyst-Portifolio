@@ -12,7 +12,7 @@
     --first-color: rgb(110, 87, 224);
     --first-color-hover: rgb(40, 91, 212);
 
-    --second-color: rgb(30, 159, 171);
+    --second-color: rgb(0, 201, 255);
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
 
@@ -177,8 +177,14 @@ nav{
     background: var(--third-color);
     color: var(--color-white);
     padding: 3px 8px;
-    font-size: 14px;
+    font-size: 12px;
     border-radius: 5px;
+}
+.featured-name h1{
+    font-size: 45px;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-block: -10px;
 }
 .featured-name{
     font-size: 50px;
@@ -208,7 +214,7 @@ nav{
 }
 .social_icons{
     display: flex;
-    margin-top: 5em;
+    margin-top: 2em;
     gap: 30px;
 }
 .icon{
@@ -362,12 +368,13 @@ h3{
 }
 
 /* ----- PROJECTS BOX ----- */
+
 .project-container {
     display: flex;
-    width: 100%;
-    justify-content: flex-start; /* Alterado para 'flex-start' */
-    gap: 20px;
+    justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
+    max-width: 100%;
 }
 
 .project-box {
@@ -375,14 +382,14 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: calc(33.33% - 20px); /* Mantido o tamanho anterior */
-    height: 250px;
-    background: var(--color-white);
-    border-radius: 20px;
+    flex-basis: calc(33% - 60px); /* 25% da largura com um gap de 10px */
+    height: 250px; /* Altura fixa */
+    width: auto;
+    border-radius: 10px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
+    align-self: flex-start; /* Alinha o projeto à esquerda dentro do container */
 }
-
 
 .project-box>i {
     font-size: 50px;
@@ -392,7 +399,7 @@ h3{
 
 .project-box label {
     font-size: 15px;
-    color: #ffffff; /* Modifica a cor da descrição */
+    color: #ffffff; /* Cor da descrição */
 }
 
 .project-overlay {
@@ -401,7 +408,7 @@ h3{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.603); /* Modifica a cor da sobreposição */
+    background-color: rgba(0, 0, 0, 0.603); /* Cor da sobreposição */
     color: #fff;
     opacity: 0;
     display: flex;
@@ -409,8 +416,8 @@ h3{
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 20px;
-    transition: opacity 1s; /* Adiciona transição para a opacidade */
+    border-radius: 10px;
+    transition: opacity 1s; /* Transição para a opacidade */
 }
 
 .project-overlay p {
@@ -420,26 +427,19 @@ h3{
 }
 
 .project-overlay .project-title {
-    /* Estiliza o título do projeto dentro da sobreposição do project box */
-    font-size: 24px;
-    /* Define a cor do texto do título do projeto como branco */
+    font-size: 26px;
     color: #ffffff;
-    /* Define a margem inferior do título do projeto */
     margin-bottom: 10px;
 }
 
 .project-box:hover .project-overlay {
-    opacity: 5; /* Ao passar o mouse, a opacidade é alterada para 1 */
+    opacity: 1; /* Opacidade ao passar o mouse */
 }
 
 .project-image img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.1s ease; /* Adiciona a transição apenas para a imagem */
-}
-
-.project-box:hover img {
-    transform: scale(1.1);
+    width: auto; /* Largura da imagem */
+    height: 350px; /* Altura da imagem */
+    object-fit: cover; /* Garante que a imagem cubra o contêiner */
 }
 
 
